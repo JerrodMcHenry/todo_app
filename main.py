@@ -1,1 +1,3 @@
-print("Enter to do:")
+response = input("Enter to do: ")
+
+print(response)

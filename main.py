@@ -10,9 +10,11 @@ while True:
             todo = input("Enter a todo: ")
             todos.append(todo)
         case 'show':
-            for i in todos:
-                print(i)
+            for item in todos:
+                item = item.title()
+                print(item)
         case 'exit':
             break
+        
 
 print("Bye!")

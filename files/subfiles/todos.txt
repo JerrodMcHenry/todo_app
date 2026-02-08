@@ -2,3 +2,5 @@ play
 fix
 shower
 trash
+buy
+buy

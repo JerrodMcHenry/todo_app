@@ -21,7 +21,9 @@ while True:
             todos = file.readlines()
             file.close()
 
+
             for index, item in enumerate(todos):
+                item = item.strip("\n")
                 print(f"{index + 1}-{item}".title())
         case 'edit':
             number = int(input("Number of the todo to edit: "))

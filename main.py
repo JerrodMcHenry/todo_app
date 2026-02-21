@@ -8,19 +8,18 @@ while True:
         case 'add':
             todo = input("Enter a todo: ") + "\n"
 
-            file = open('files/subfiles/todos.txt', 'r')
-            todos = file.readlines()
-            file.close()
+            with open('files/subfiles/todos.txt', 'r') as file:
+                todos = file.readlines()
 
             todos.append(todo)
 
-            file = open('files/subfiles/todos.txt', 'w')
-            file.writelines(todos)
-            file.close()
+            with open('files/subfiles/todos.txt', 'w') as file:
+                file.writelines(todos)
+
         case 'show':
-            file = open('files/subfiles/todos.txt', 'r')
-            todos = file.readlines()
-            file.close()
+            with open('files/subfiles/todos.txt', 'r') as file:
+                todos = file.readlines()
+            
 
 
             for index, item in enumerate(todos):

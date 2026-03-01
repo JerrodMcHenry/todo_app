@@ -4,8 +4,8 @@ while True:
     user_action = input("Type add, show, edit, complete or exit: ")
     user_action = user_action.strip()
     
-    if 'add' in user_action:
-            todo = input("Enter a todo: ") + "\n"
+    if 'add' in user_action or 'new' in user_action:
+            todo = user_action[4:]
 
             with open('files/subfiles/todos.txt', 'r') as file:
                 todos = file.readlines()
@@ -15,7 +15,7 @@ while True:
             with open('files/subfiles/todos.txt', 'w') as file:
                 file.writelines(todos)
 
-    if 'show' in user_action:
+    elif 'show' in user_action:
             with open('files/subfiles/todos.txt', 'r') as file:
                 todos = file.readlines()
             
@@ -24,8 +24,10 @@ while True:
             for index, item in enumerate(todos):
                 item = item.strip("\n")
                 print(f"{index + 1}-{item}".title())
-    if 'edit' in user_action:
-        number = int(input("Number of the todo to edit: "))
+    elif 'edit' in user_action:
+        number = int(user_action[5:])
+        print(number)
+        
         number = number - 1
 
         with open('files/subfiles/todos.txt', 'r') as file:
@@ -40,8 +42,8 @@ while True:
         with open('files/subfiles/todos.txt', 'w') as file:
             todos = file.writelines(todos)
     
-    if 'complete' in user_action:
-        number = int(input("Number of the todo to complete: "))
+    elif 'complete' in user_action:
+        number = int(user_action[9:])
 
         with open('files/subfiles/todos.txt', 'r') as file:
             todos = file.readlines()
@@ -55,8 +57,10 @@ while True:
 
         message = f"Todo {todo_to_remove} was removed from the list."
         print(message)
-    if 'exit' in user_action:
+    elif 'exit' in user_action:
         break
+    else:
+         print("Comment is not valid")
     
 
 print("Bye!")

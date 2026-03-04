@@ -25,23 +25,27 @@ while True:
                 item = item.strip("\n")
                 print(f"{index + 1}-{item}".title())
     elif user_action.startswith('edit'):
-        number = int(user_action[5:])
-        print(number)
+        try:
+            number = int(user_action[5:])
+            print(number)
+            
+            number = number - 1
+
+            with open('files/subfiles/todos.txt', 'r') as file:
+                todos = file.readlines()
+            print("Here is existing", todos)
+
+            new_todo = input("Enter new todo: ")
+            todos[number] = new_todo + '\n'
+
+            print("Here is the added todo", todos)
+
+            with open('files/subfiles/todos.txt', 'w') as file:
+                todos = file.writelines(todos)
+        except ValueError:
+             print("Your command is not valid.")
+             continue
         
-        number = number - 1
-
-        with open('files/subfiles/todos.txt', 'r') as file:
-            todos = file.readlines()
-        print("Here is existing", todos)
-
-        new_todo = input("Enter new todo: ")
-        todos[number] = new_todo + '\n'
-
-        print("Here is the added todo", todos)
-
-        with open('files/subfiles/todos.txt', 'w') as file:
-            todos = file.writelines(todos)
-    
     elif user_action.startswith('complete'):
         number = int(user_action[9:])
 

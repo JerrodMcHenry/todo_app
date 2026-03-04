@@ -1,5 +1,5 @@
 play
-buy
+updated the os
 another
 Tint
 fix the compclean the bagfix the drawerClean the bag

@@ -1,5 +1,4 @@
 play
-updated the os
 another
 Tint
 fix the compclean the bagfix the drawerClean the bag
@@ -9,3 +8,6 @@ a new member
 buy a camera
 Make soup
 Make pizza
+
+me
+Clean the code

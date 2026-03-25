@@ -1,4 +1,4 @@
-def get_todos(filepath):
+def get_todos(filepath='files/subfiles/todos.txt'):
     with open(filepath, 'r') as file_local:
         todos_local = file_local.readlines()
     return todos_local
@@ -15,15 +15,15 @@ while True:
     if user_action.startswith('add'):
             todo = user_action[4:]
 
-            todos = get_todos('files/subfiles/todos.txt')
+            todos = get_todos()
 
             todos.append(todo + '\n')
 
-            write_todos('files/subfiles/todos.txt', todos)
+            write_todos(c, todos)
 
     elif user_action.startswith('show'):
             
-            todos = get_todos('files/subfiles/todos.txt')
+            todos = get_todos()
             
 
             for index, item in enumerate(todos):
@@ -36,7 +36,7 @@ while True:
             
             number = number - 1
 
-            todos = get_todos('files/subfiles/todos.txt')
+            todos = get_todos()
 
             print("Here is existing", todos)
 
@@ -54,7 +54,7 @@ while True:
         try:
             number = int(user_action[9:])
 
-            todos = get_todos('files/subfiles/todos.txt')
+            todos = get_todos()
             
             index = number - 1
             todo_to_remove = todos[index].strip('\n')

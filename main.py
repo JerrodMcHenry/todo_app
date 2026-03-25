@@ -3,7 +3,7 @@ def get_todos(filepath='files/subfiles/todos.txt'):
         todos_local = file_local.readlines()
     return todos_local
 
-def write_todos(filepath, todos_arg):
+def write_todos(todos_arg, filepath='files/subfiles/todos.txt'):
      with open(filepath, 'w') as file:
         file.writelines(todos_arg)
         
@@ -19,7 +19,7 @@ while True:
 
             todos.append(todo + '\n')
 
-            write_todos(c, todos)
+            write_todos(todos)
 
     elif user_action.startswith('show'):
             
@@ -45,7 +45,7 @@ while True:
 
             print("Here is the added todo", todos)
 
-            write_todos('files/subfiles/todos.txt', todos)
+            write_todos(todos)
         except ValueError:
              print("Your command is not valid.")
              continue
@@ -60,7 +60,7 @@ while True:
             todo_to_remove = todos[index].strip('\n')
             todos.pop(index)
             
-            write_todos('files/subfiles/todos.txt', todos)
+            write_todos(todos)
 
             message = f"Todo {todo_to_remove} was removed from the list."
             print(message)

@@ -1,12 +1,6 @@
-def get_todos(filepath='files/subfiles/todos.txt'):
-    with open(filepath, 'r') as file_local:
-        todos_local = file_local.readlines()
-    return todos_local
+from functions import get_todos, write_todos
 
-def write_todos(todos_arg, filepath='files/subfiles/todos.txt'):
-     with open(filepath, 'w') as file:
-        file.writelines(todos_arg)
-        
+
 while True:
     # Get user input and strip space chars from it
     user_action = input("Type add, show, edit, complete or exit: ")

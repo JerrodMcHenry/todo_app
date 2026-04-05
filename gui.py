@@ -1,12 +1,26 @@
 import functions 
 import FreeSimpleGUI 
 
-layout = [
-    [FreeSimpleGUI.Text("Enter a todo: ")],
-    [FreeSimpleGUI.Input()],
-    [FreeSimpleGUI.Button("Ok")]
-]
 
-window = FreeSimpleGUI.Window('My To-Do App', layout)
-window.read()
+label = FreeSimpleGUI.Text("Enter a todo: ")
+input_box = FreeSimpleGUI.Input(key="todo")
+add_button = FreeSimpleGUI.Button("Add")
+
+
+window = FreeSimpleGUI.Window('My To-Do App', 
+                              layout=[[label], [input_box, add_button]], 
+                              font=('Helvetica', 20))
+while True:
+    event, values = window.read()
+    print(event)
+    print(values)
+    match event:
+        case "Add":
+            todos = functions.get_todos()
+            new_todo = values['todo'] + "\n"
+            todos.append(new_todo)
+            functions.write_todos(todos)
+
+        case FreeSimpleGUI.WIN_CLOSED:
+            break
 window.close()

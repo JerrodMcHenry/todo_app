@@ -1,8 +1,13 @@
-import random 
+import FreeSimpleGUI as sg
 
-first_q = int(input("Enter the lower bound: "))
-second_q = int(input("Enter the upper bound: "))
+layout = [
+    [sg.Text("Enter feet:")],
+    [sg.Input()],
+    [sg.Text("Enter inches:")],
+    [sg.Input()],
+    [sg.Button("Convert")]
+]
 
-final = random.randint(first_q, second_q)
-
-print(final)
+window = sg.Window("Convertor", layout)
+window.read()
+window.close()

@@ -12,7 +12,4 @@ my new todo
 Master Python!
 Tint
 Become a swe
-
-
 Newest
-

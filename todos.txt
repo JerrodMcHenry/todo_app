@@ -1,4 +1,3 @@
-Tint
 Clean the bag
 Fix the draers
 a new member
@@ -9,8 +8,6 @@ me
 Clean the code
 my new todo
 1
-Master Python!
 Tint
 Become a swe
 Newestclean the baghiclean the bag
-sHi
